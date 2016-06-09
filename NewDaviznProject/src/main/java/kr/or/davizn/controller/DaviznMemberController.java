@@ -29,7 +29,7 @@ public class DaviznMemberController {
 		if(result > 0){
 			view = "redirect:grantAuth.dvn?userid="+userid;
 		}else{
-			view = "ui.main";
+			view = "joinus.signup";
 		}
 		return view;
 	}
