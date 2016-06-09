@@ -2,19 +2,14 @@ package kr.or.davizn.model.dto;
 
 public class DaviznMemberDTO {
 
-	private int meberno;
+	
 	private String userid;
 	private String password;
 	private String nickname;
 	private int phone;
 	private int point;
 	private String profile_img;
-	public int getMeberno() {
-		return meberno;
-	}
-	public void setMeberno(int meberno) {
-		this.meberno = meberno;
-	}
+	
 	public String getUserid() {
 		return userid;
 	}
