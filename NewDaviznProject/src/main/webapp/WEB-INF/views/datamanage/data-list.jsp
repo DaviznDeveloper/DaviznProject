@@ -2,8 +2,6 @@
     pageEncoding="UTF-8"%>
     
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-<%@include file="/ui/header.jsp"%>
 				
 				<!-- content -->
 				<div class="col-md-10 content-container">
@@ -206,5 +204,3 @@
 			</div>
 			
 		</div>
-
-<%@include file="/ui/footer.jsp"%>
