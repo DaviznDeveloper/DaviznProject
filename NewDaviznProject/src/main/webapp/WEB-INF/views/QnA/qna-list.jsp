@@ -2,8 +2,6 @@
     pageEncoding="UTF-8"%>
     
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-<%@include file="/ui/header.jsp"%>
 				
 				<!-- content -->
 				<div class="container">
@@ -210,6 +208,3 @@
 		</div>
 		
 <script src="${pageContext.request.contextPath}/resources/js/community.js"></script>
-
-		
-<%@include file="/ui/footer.jsp"%>

@@ -3,8 +3,6 @@
     
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<%@include file="/WEB-INF/views/inc/header.jsp"%>
-<script src="${pageContext.request.contextPath}/resources/js/signUp.js"></script>
 				<!-- content -->
 				<div class="col-md-10 content-container">
 	
@@ -77,4 +75,4 @@
 			
 		</div>
 
-<%@include file="/WEB-INF/views/inc/footer.jsp"%>
+<script src="${pageContext.request.contextPath}/resources/js/signUp.js"></script>
