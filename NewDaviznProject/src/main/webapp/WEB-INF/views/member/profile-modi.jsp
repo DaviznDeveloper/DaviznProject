@@ -33,7 +33,7 @@
 								<div class="col-md-12 no-padding">
 									<span class="profile-font">
 										<i class="fa fa-envelope profile-font-icon" aria-hidden="true"></i>
-										&nbsp;&nbsp;<input type="text" class="form-control" value="leafgreen.hwang@gmail.com" disabled>
+										&nbsp;&nbsp;<input type="text" class="form-control" value="${member.userid}" disabled>
 									</span>
 								</div>
 								
