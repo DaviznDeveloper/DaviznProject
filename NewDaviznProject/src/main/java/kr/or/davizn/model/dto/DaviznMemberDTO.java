@@ -1,5 +1,7 @@
 package kr.or.davizn.model.dto;
 
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
+
 public class DaviznMemberDTO {
 
 	
@@ -9,7 +11,14 @@ public class DaviznMemberDTO {
 	private int phone;
 	private int point;
 	private String profile_img;
+	private CommonsMultipartFile uploadImage;
 	
+	public CommonsMultipartFile getUploadImage() {
+		return uploadImage;
+	}
+	public void setUploadImage(CommonsMultipartFile uploadImage) {
+		this.uploadImage = uploadImage;
+	}
 	public String getUserid() {
 		return userid;
 	}

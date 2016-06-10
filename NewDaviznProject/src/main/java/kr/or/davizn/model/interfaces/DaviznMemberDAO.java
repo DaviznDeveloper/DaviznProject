@@ -19,4 +19,7 @@ public interface DaviznMemberDAO {
 	//회원정보 수정(기존 정보 검색)
 	public DaviznMemberDTO selectOneMember(String userid);
 	
+	//회원정보 수정(회원 정보 수정)
+	public int updateMember(DaviznMemberDTO member);
+	
 }

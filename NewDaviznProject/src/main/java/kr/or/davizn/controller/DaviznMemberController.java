@@ -2,12 +2,15 @@ package kr.or.davizn.controller;
 
 import java.security.Principal;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import kr.or.davizn.model.dto.DaviznMemberDTO;
 import kr.or.davizn.service.DaviznMemberService;
@@ -22,7 +25,7 @@ public class DaviznMemberController {
 	//회원가입
 	@RequestMapping("joinMember.dvn")
 	public String joinMember(DaviznMemberDTO member){
-		System.out.println("eettttt22e");
+		
 		String view = null;
 		int result = service.insertMember(member);
 		String userid = member.getUserid();
@@ -53,23 +56,21 @@ public class DaviznMemberController {
 		return result;
 	}
 	
+	//프로필 창 이동
 	@RequestMapping("profile.dvn")
 	public String moveProfile(){
 		
 		return "member.profile";
 	}
 	
-	//회원 정보 수정 창 이동
+	//회원 정보 수정 창 이동(기존 정보 확인)
 	@RequestMapping("profileModi.dvn")
 	public String moveProfileModi(Principal principal, Model model){
-		System.out.println("회원정보 수정 컨트롤러");
+		System.out.println("회원정보 수정(기존 정보 확인) 컨트롤러");
 		String view = null;
 		String userid = principal.getName();
-		System.out.println("로그인한 아이디 : "+userid);
+		
 		DaviznMemberDTO member = service.selectOneMember(userid);
-		System.out.println(member.getNickname());
-		System.out.println(member.getUserid());
-		System.out.println(member.getPhone());
 		
 		if(member != null){
 			model.addAttribute("member", member);
@@ -81,6 +82,30 @@ public class DaviznMemberController {
 		}
 		
 		return view;
+	}
+	
+	@RequestMapping("profileModiAction.dvn")
+	public String ProfileModiAction(DaviznMemberDTO member, HttpServletRequest request){
+		System.out.println("회원 정보 수정(회원 정보 수정) 컨트롤러");
+		String view = null;
+		System.out.println("1111");
+		CommonsMultipartFile file = member.getUploadImage();
+		if(file != null && file.getSize() > 0 ){
+			String filename = file.getOriginalFilename();
+			String path = request.getRealPath("/resources/upload");
+		}
+		
+		System.out.println("222");
+		String filename = file.getOriginalFilename();
+		System.out.println("33");
+		String path = request.getRealPath("/resources/upload");
+		System.out.println("44");
+		String fullpath = path + "\\" + filename;
+		System.out.println("55");
+		System.out.println(filename + " / " + path + " / " + fullpath);
+		
+		
+		return null;
 	}
 	
 	

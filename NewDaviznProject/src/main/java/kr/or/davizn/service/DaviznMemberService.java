@@ -45,4 +45,11 @@ public class DaviznMemberService {
 		DaviznMemberDTO member = dao.selectOneMember(userid);
 		return member;
 	}
+	
+	//회원정보 수정(회원정보 수정)
+	public int updateMember(DaviznMemberDTO member){
+		DaviznMemberDAO dao = sqlsession.getMapper(DaviznMemberDAO.class);
+		int result = dao.updateMember(member);
+		return result;
+	}
 }

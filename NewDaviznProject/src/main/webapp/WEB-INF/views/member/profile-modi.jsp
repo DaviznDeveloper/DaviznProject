@@ -15,13 +15,13 @@
 						
 						<div class="col-md-4 col-md-offset-4 no-padding">
 	
-							<form action="" method="post" enctype="multipart/form-data">
+							<form action="${pageContext.request.contextPath}/member/profileModiAction.dvn" method="post" enctype="multipart/form-data">
 	
 								<a href="" id="profile-thum-modi" class="thumbnail profile-thumbnail no-margin" data-toggle="tooltip" title="프로필 사진 변경하기">
 									<img id="profile-preview" src="${pageContext.request.contextPath}/resources/img/avatar2.png" alt="...">
 								</a>
 								<br>
-								<input type='file' id="uploadImage" name="" />
+								<input type='file' id="uploadImage" name="uploadImage" />
 								
 								<br>
 								
