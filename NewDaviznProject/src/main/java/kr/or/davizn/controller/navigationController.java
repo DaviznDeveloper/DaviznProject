@@ -51,7 +51,6 @@ public class navigationController {
 		//커뮤니티 창 이동
 		@RequestMapping("community.dvn")
 		public String moveCommunity(){
-			System.out.println("들어왔니");
 			return "community.community-list";
 		}
 		

@@ -201,6 +201,10 @@
 		text-align: left;
 	}
 	
+	.board-d-content-box {
+		min-height: 200px;
+	}
+	
 	.board-d-content {
 		text-align: left;
 	}
