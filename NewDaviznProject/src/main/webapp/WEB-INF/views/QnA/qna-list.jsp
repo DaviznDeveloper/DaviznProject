@@ -69,71 +69,15 @@
 								
 								<tbody>
 									
-									<tr>
-										<!-- 글 번호 -->
-										<td scope="col" class="ellipsis board-l-no">3</td>
-										
-										<td scope="col" id="board-title" name="auth" class="ellipsis board-l-title">
-											<a href="" class="board-l-t" data-toggle="modal"
-												data-target=".board-l-t-pwd">
-												안녕하세요^^
-												<img src="${pageContext.request.contextPath}/resources/img/new.gif">
-											</a>
-											<!-- Small modal -->
-											<div class="modal fade board-l-t-pwd" tabindex="-1"
-												role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-												<div class="modal-dialog modal-sm">
-													<div class="modal-content">
-														<input type="password" class="form-control" id="" placeholder="이 글의 비밀번호를 입력하세요.">
-														<button type="submit" class="btn btn-info">확인</button>
-													</div>
-												</div>
-											</div> 
-										</td>
-										
-										
-										<td scope="col" class="ellipsis board-l-writer">kglim</td>
-										<td scope="col" class="ellipsis board-l-date">2016.06.08</td>
-										<td scope="col" class="ellipsis board-l-lookup">1</td>
-										
-									</tr>
-									
-									<tr>
-										<!-- 글 번호 -->
-										<td scope="col" class="ellipsis board-l-no">2</td>
-										
-										<td scope="col" id="board-title" name="auth" class="ellipsis board-l-title">
-											&nbsp;&nbsp;
-											<img src="${pageContext.request.contextPath}/resources/img/board-re.gif">
-											<a href="" class="board-l-t">
-												re: 오오~반갑습니당~~!!
-												<img src="${pageContext.request.contextPath}/resources/img/new.gif">
-											</a>
-										</td>
-										
-										
-										<td scope="col" class="ellipsis board-l-writer">kglim</td>
-										<td scope="col" class="ellipsis board-l-date">2016.06.08</td>
-										<td scope="col" class="ellipsis board-l-lookup">1</td>
-										
-									</tr>
-									
-									<tr>
-										<!-- 글 번호 -->
-										<td scope="col" class="ellipsis board-l-no">1</td>
-										
-										<td scope="col" id="board-title" name="auth" class="ellipsis board-l-title">
-											<a href="" class="board-l-t">
-												첫글이군요 후후후
-											</a>
-										</td>
-										
-										
-										<td scope="col" class="ellipsis board-l-writer">kglim</td>
-										<td scope="col" class="ellipsis board-l-date">2016.06.08</td>
-										<td scope="col" class="ellipsis board-l-lookup">1</td>
-										
-									</tr>
+									<c:forEach items="${list}" var="n">
+										<tr>
+											<td class="seq">${n.boardseq}</td>
+											<td class="title"><a href="noticeDetail.htm?seq=${n.boardseq}">${n.boardsubject}</a></td>
+											<td class="writer">${n.nickname}</td>
+											<td class="regdate">${n.boarddate}</td>
+											<td class="hit">${n.boardreadcount}</td>
+										</tr>
+									</c:forEach>
 								
 								</tbody>
 							
@@ -142,7 +86,7 @@
 						</div>
 						
 						<div class="col-md-12">
-							<a href="" class="btn btn-success pull-right">글쓰기</a>
+							<a href="${pageContext.request.contextPath}/qnaWrite.dvn" class="btn btn-success pull-right">글쓰기</a>
 						</div>
 
 						<div class="text-center">

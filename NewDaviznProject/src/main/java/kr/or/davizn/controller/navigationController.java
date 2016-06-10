@@ -55,11 +55,7 @@ public class navigationController {
 		}
 		
 		//1:1 문의&건의 창 이동
-		@RequestMapping("QnA.dvn")
-		public String moveQnA(){
-			
-			return "QnA.qna-list";
-		}
+	
 		
 		//사이트 관리 창 이동
 		@RequestMapping("admin.dvn")
