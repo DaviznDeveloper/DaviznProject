@@ -1,11 +1,13 @@
 package kr.or.davizn.controller;
 
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class navigationController {
-
+	
 		//회원가입 창 이동
 		@RequestMapping("signup.dvn")
 		public String moveSignUp(){
@@ -37,6 +39,11 @@ public class navigationController {
 		//데이터 관리 창 이동
 		@RequestMapping("datamanage.dvn")
 		public String moveDataMain(){
+			UserDetails userinfo =  (UserDetails)SecurityContextHolder.getContext().
+                    getAuthentication().
+                    getPrincipal();
+			
+System.out.println("인증된 ID"+userinfo.getUsername()); //인증  ID
 			
 			return "datamanage.data-repo";
 		}
