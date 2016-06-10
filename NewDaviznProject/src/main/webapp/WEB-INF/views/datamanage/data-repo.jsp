@@ -12,7 +12,7 @@
 					</ol>
 					
 					<div class="data-repo-box" data-toggle="tooltip" title="저장소 제목">
-						<a href="${pageContext.request.contextPath}/data-insert.jsp" type="button" class="btn btn-info data-repo-btn">
+						<a href="${pageContext.request.contextPath}/data-list.jsp" type="button" class="btn btn-info data-repo-btn">
 							<i class="fa fa-folder-o data-repo-icon" aria-hidden="true"></i>
 						</a>
 					</div>
@@ -43,7 +43,7 @@
 								
 									<div class="row col-md-12 center-block">
 									
-										<form action="" method="post">
+										<form action="/datamanage/addStorage.dvn" method="post">
 											
 						                	<div class="form-group">
 						                		<input type="text" name="" class="form-control" 
@@ -51,7 +51,7 @@
 						                	</div>
 						                	
 						                	<div class="form-group">
-						                		<button type="submit" name="" class="form-control btn btn-info">
+						                		<button type="submit" name="addStorage" id="addStorage" class="form-control btn btn-info">
 						                			확장하기
 						                		</button>
 						                	</div>

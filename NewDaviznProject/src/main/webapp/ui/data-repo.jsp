@@ -14,7 +14,7 @@
 					</ol>
 					
 					<div class="data-repo-box" data-toggle="tooltip" title="저장소 제목">
-						<a href="${pageContext.request.contextPath}/data-insert.jsp" type="button" class="btn btn-info data-repo-btn">
+						<a href="${pageContext.request.contextPath}/dataManage/datalist.dvn" type="button" class="btn btn-info data-repo-btn">
 							<i class="fa fa-folder-o data-repo-icon" aria-hidden="true"></i>
 						</a>
 					</div>
