@@ -16,8 +16,7 @@ public class DaviznMemberService {
 	//회원가입
 	public int insertMember(DaviznMemberDTO member){
 		DaviznMemberDAO dao = sqlsession.getMapper(DaviznMemberDAO.class);
-		int result = dao.insertMember(member);
-		
+		int result = dao.insertMember(member);	
 		return result;
 	}
 	
