@@ -46,6 +46,7 @@
 		<!-- Custom CSS -->
 		<link href="${pageContext.request.contextPath}/resources/css/common.css" rel="stylesheet">
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/sideBar.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/board.css">
 		
 		<!-- Custom Script -->
 		<script src="${pageContext.request.contextPath}/resources/js/common.js"></script>

@@ -20,9 +20,9 @@ public class AuthController {
 		String view = null;
 		int result = service.grantAuth(userid);
 		if(result > 0){
-			view = "ui.signupok";
+			view = "joinus.sign-up-ok";
 		}else{
-			view = "ui.main";
+			view = "joinus.signup";
 		}
 		return view;
 	}
