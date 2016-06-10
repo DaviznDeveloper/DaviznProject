@@ -35,6 +35,9 @@
 		<!-- ipgrid -->
 		<link href="${pageContext.request.contextPath}/resources/lib/ipgrid-master/ip.grid.css" rel="stylesheet" />
 		
+		<!-- summernote -->
+		<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css" rel="stylesheet">
+		
 		<!-- editTable -->
 		<link href="${pageContext.request.contextPath}/resources/lib/editTable/jquery.edittable.css" rel="stylesheet" />
 		
@@ -46,6 +49,7 @@
 		<!-- Custom CSS -->
 		<link href="${pageContext.request.contextPath}/resources/css/common.css" rel="stylesheet">
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/sideBar.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/board.css">
 		
 		<!-- Custom Script -->
 		<script src="${pageContext.request.contextPath}/resources/js/common.js"></script>
