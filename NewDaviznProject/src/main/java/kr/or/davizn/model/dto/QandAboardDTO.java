@@ -3,7 +3,6 @@ package kr.or.davizn.model.dto;
 import java.sql.Date;
 
 public class QandAboardDTO {
-	private int boardnum; // 글 번호 
 	private String boardsubject;// 제목
 	private String boardpwd;//글 비밀번호
 	private String boardcontent;//내용
@@ -16,18 +15,20 @@ public class QandAboardDTO {
 	private String userid;//회원아이디(이메일)
 	private String nickname;//닉네임 (get set 둘다 있음..)
 	
+	@Override
+	public String toString() {
+		return "QandAboardDTO [ boardsubject=" + boardsubject + ", boardpwd=" + boardpwd
+				+ ", boardcontent=" + boardcontent + ", boarddate=" + boarddate + ", boardreadcount=" + boardreadcount
+				+ ", boardref=" + boardref + ", boardlev=" + boardlev + ", boardseq=" + boardseq + ", boardnotice="
+				+ boardnotice + ", userid=" + userid + ", nickname=" + nickname + "]";
+	}
 	public String getNickname() {
 		return nickname;
 	}
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
 	}
-	public int getBoardnum() {
-		return boardnum;
-	}
-	public void setBoardnum(int boardnum) {
-		this.boardnum = boardnum;
-	}
+
 	public String getBoardsubject() {
 		return boardsubject;
 	}

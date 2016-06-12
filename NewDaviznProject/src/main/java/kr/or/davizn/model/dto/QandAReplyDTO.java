@@ -1,15 +1,17 @@
 package kr.or.davizn.model.dto;
 
 public class QandAReplyDTO {
-	private int replynum;//댓글 번호
+	private int boardseq;//댓글 시퀀스
 	private String replycontent;//내용
 	private String userid;//회원 아이디
 	private int boardnum;//글 번호
-	public int getReplynum() {
-		return replynum;
+
+	
+	public int getBoardseq() {
+		return boardseq;
 	}
-	public void setReplynum(int replynum) {
-		this.replynum = replynum;
+	public void setBoardseq(int boardseq) {
+		this.boardseq = boardseq;
 	}
 	public String getReplycontent() {
 		return replycontent;

@@ -17,7 +17,7 @@
 					
 						<table class="table" style=TABLE-layout:fixed>
 							
-							<form action="" method="get" name="boardform" id="writeform" enctype="multipart/form-data">
+							<form action="qnaWrite.dvn" method="post" name="boardform" id="writeform">
 						
 								<thead class="board-thead">
 								
@@ -31,7 +31,7 @@
 											<div class="form-group">
 												<label for="inputEmail3" class="col-sm-1 control-label board-w-t">제목</label>
 												<div class="col-sm-11">
-													<input type="text" class="form-control" id="board-subject"
+													<input type="text" class="form-control" id="board-subject" name="boardsubject"
 														placeholder="제목을 입력하세요.">
 												</div>
 											</div>
@@ -45,7 +45,7 @@
 											<div class="form-group">
 												<label for="inputEmail3" class="col-sm-1 control-label board-w-t">비밀번호</label>
 												<div class="col-sm-11">
-													<input type="password" class="form-control" id="board-subject"
+													<input type="password" class="form-control" id="board-subject" name="boardpwd"
 														placeholder="이 글의 비밀번호을 설정하세요.">
 												</div>
 											</div>
@@ -73,7 +73,7 @@
 										<div class="form-group">
 											
 											<td colspan="3">
-												<div id="summernote">내용을 입력하세요.</div>
+												 <textarea id="summernote" class="summernote" name="boardcontent" rows="20"></textarea>			        
 											</td>
 										
 										</div>
@@ -87,8 +87,8 @@
 											<td colspan="3" scope="col" class="">
 											
 												<div class="text-center">
-													<button type="button" class="btn btn-success" id = "write_submit">완료</button>
-													<a class="btn btn-default" href="" role="button">취소</a>
+													<button type="submit" class="btn btn-success" id = "write_submit">완료</button>
+													<a class="btn btn-default" href="qna-list.jsp" role="button">취소</a>
 												</div>
 												
 											</td>
@@ -119,7 +119,8 @@
 <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/qna.js"></script>
 <script type="text/javascript">
-	$('#summernote').summernote({
-		height: 300
+	$('#summernote').summernote({		
+		height: 300		
 	});
+
 </script>

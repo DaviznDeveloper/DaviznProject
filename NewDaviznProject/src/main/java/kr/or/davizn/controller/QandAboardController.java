@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -23,10 +24,12 @@ public class QandAboardController {
 	
 	//글목록보기
 	@RequestMapping("QnA.dvn")
-	public String notices(String pg , String f , String q , Model model) throws ClassNotFoundException , SQLException {
-  	
-		List<QandAboardDTO> list = QandAboardservice.notices(pg, f, q);
+	public String notices(String pg, Model model) throws ClassNotFoundException , SQLException {
+		System.out.println("dvn 컨트롤!!");
+		List<QandAboardDTO> list = QandAboardservice.notices(pg, model);
+		System.out.println("pg :"+pg+"model : "+model);
 		model.addAttribute("list", list); 
+		System.out.println("adsfsdafadsf"+list);
 		return "QnA.qna-list";
 	}
     //글상세보기
@@ -40,21 +43,20 @@ public class QandAboardController {
 	 }
 
 	// 글등록 화면 처리
-	 @RequestMapping("qnaWrite.dvn")
+	 @RequestMapping(value="qnaWrite.dvn", method = RequestMethod.GET)
 	public String noticeReg() {
-		 System.out.println("qna컨트롤");
-		 return  "QnA.qna-write";
-	   
+		 return  "QnA.qna-write";	   
 	 }
 
 	// 글등록 처리(실제 글등록 처리)
-	 @RequestMapping(value = "QnaReg.dvn", method = RequestMethod.POST)
-	public String noticeReg(QandAboardDTO n, HttpServletRequest request)
+	 @RequestMapping(value = "qnaWrite.dvn", method = RequestMethod.POST)
+	public String noticeReg(QandAboardDTO dto, HttpServletRequest request)
 	   throws IOException, ClassNotFoundException, SQLException {
-		 
+		 System.out.println("등록 컨트롤");
+		 System.out.println(dto);
 		 String url = "redirect:qna-list";
 		 try{
-			 url = QandAboardservice.noticeReg(n, request);
+			 url = QandAboardservice.noticeReg(dto, request);
 		 }catch(Exception e){
 			System.out.println(e.getMessage()); 
 		 }
@@ -65,10 +67,10 @@ public class QandAboardController {
 
 	// 글삭제하기
 	 @RequestMapping("QnaDel.dvn")
-	public String noticeDel(String seq) throws ClassNotFoundException,
+	public String noticeDel(String boardseq) throws ClassNotFoundException,
 	   SQLException {
-		 
-		String url = QandAboardservice.noticeDel(seq);
+		String url = QandAboardservice.noticeDel(boardseq);
+		System.out.println(url);
 		return url; 
 	 }
      
@@ -78,18 +80,19 @@ public class QandAboardController {
 	 @RequestMapping(value = "QnAEdit.dvn", method = RequestMethod.GET)
 	 public String noticeEdit(String boardseq, Model model)
 	   throws ClassNotFoundException, SQLException {
-	  
-		 QandAboardDTO notice = QandAboardservice.noticeEdit(boardseq);
+		 QandAboardDTO notice = QandAboardservice.noticeEdit1(boardseq);
 	    model.addAttribute("notice", notice);
-	    return "null";
+	    return "QnA.qna-modify";
 	 }
 
 	 //게시판 실제 수정처리
 	 @RequestMapping(value = "QnAEdit.dvn", method = RequestMethod.POST)
 	 public String noticeEdit(QandAboardDTO n ,HttpServletRequest request) throws ClassNotFoundException,
 	   SQLException, IOException {
-
-		String url = QandAboardservice.noticeEdit(n, request);
+		 System.out.println("실제 에디트");
+		 System.out.println("seq : " + n.getBoardseq());
+		String url = QandAboardservice.noticeEdit2(n, request);
+		System.out.println(url);
 		return url;
 	 }
 

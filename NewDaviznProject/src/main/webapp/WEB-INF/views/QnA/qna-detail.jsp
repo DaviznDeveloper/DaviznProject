@@ -18,22 +18,21 @@
 							<article id="board-content" class="board-content">
 			
 								<div class="table-responsive">
-								
 									<table class="table" style=TABLE-layout:fixed>
 									
 										<thead class="board-thead">
 										
 											<tr>
 											
-												<th scope="col" class="ellipsis board-d-title">안녕하세용~</th>
-												<th scope="col" class="board-d-date">2016.06.09</th>
+												<th scope="col" class="ellipsis board-d-title">${notice.boardsubject}</th>
+												<th scope="col" class="board-d-date">${notice.boarddate}</th>
 												
 											</tr>
 											
 											<tr>
 												
-												<th scope="col" class="board-d-writer">kglim</th>
-												<th scope="col" class="board-d-lookup">1</th>
+												<th scope="col" class="board-d-writer">${notice.userid}</th>
+												<th scope="col" class="board-d-lookup">${notice.boardreadcount}</th>
 											
 											</tr>
 										
@@ -48,7 +47,7 @@
 													<div class="col-xs-12 col-md-12 board-d-content-box">
 													
 														<p class="board-d-content">
-														안녕하세요~오늘 가입했습니다 반가워요~
+														${notice.boardcontent}
 														</p>
 													
 													</div>
@@ -62,9 +61,9 @@
 												<td colspan="2" scope="col" class="">
 													<div class="">
 														<a class="btn btn-default" href="" role="button">답글</a>
-														<a class="btn btn-default" href="" role="button">수정</a>
-														<a class="btn btn-default" href="" role="button">삭제</a>
-														<a class="btn btn-default" href="" role="button">목록</a>
+														<a class="btn btn-default" href="QnAEdit.dvn?boardseq=${notice.boardseq}" role="button">수정</a>
+														<a class="btn btn-default" href="QnaDel.dvn?boardseq=${notice.boardseq}" role="button">삭제</a>
+														<a class="btn btn-default" href="QnA.dvn" role="button">목록</a>
 													</div>
 												</td>
 											
